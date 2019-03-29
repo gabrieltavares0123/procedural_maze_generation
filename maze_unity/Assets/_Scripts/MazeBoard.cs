@@ -4,7 +4,12 @@ public class MazeBoard
 {
     private GameObject wallPrefab;
     private GameObject floorPrefab;
+
     private MazeCell[,] board;
+    public MazeCell[,] Board
+    {
+        get { return this.board; }
+    }
 
     private readonly float distance = 1f;
 
