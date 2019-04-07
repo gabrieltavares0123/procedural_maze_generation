@@ -1,24 +1,25 @@
 ﻿using UnityEngine;
 
-public static class RandomDirectionGenerator
+namespace ProceduralMaze
 {
-    //private static Random rand;
-    //private const string seed = "procedural_maze@generation-Algorithm%withUnItY!";
-    private const int min = 0;
-    private const int max = 4;
-
-    public static Direction GetRandomDirection()
+    public static class RandomDirectionGenerator
     {
-        //rand = new Random(seed.GetHashCode());
-        //int i = rand.Next(min, max);
-        int i = Random.Range(min, max);
-
-        switch (i)
+        public static int GetNextNumber(System.Random rand, int min, int max)
         {
-            case 0: return Direction.North;
-            case 1: return Direction.South;
-            case 2: return Direction.Weast;
-            default: return Direction.East;
+            return rand.Next(min, max);
+        }
+
+        public static Direction GetDirection()
+        {
+            int i = Random.Range(1, 4);
+
+            switch (i)
+            {
+                case 1: return Direction.North;
+                case 2: return Direction.South;
+                case 3: return Direction.East;
+                default: return Direction.Weast;
+            }
         }
     }
 }
